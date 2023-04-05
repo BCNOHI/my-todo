@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: skyblue;
+            display: flex;
+            justify-content: center
+        }
+        .container{
+            width: 500px;
+            height: auto;
+            background-color:white;
+            display: flex;
+            justify-content: center;
+        }
+        #inp{
+            width:450px;
+            margin: right 20px;
+            height: 30px;
+            border: 0;
+            border-radius:7px;
+            outline: 2px solid skyblue;
+        }
+        .btn{
+            width: 100px;
+            padding: 10px;
+            background-color:skyblue;
+            border-radius:5px;
+            border:0;
+            color:white;
+        }
+        .wrapper{
+            background-color: white;
+            width: 100%;
+        }
+        h3{
+            background-color:lightblue;
+            display: flex;
+            justify-content: space-between;
+            padding:10px;
+            border-radius:10px;
+            height:40px;
+            align-items: center;
+            
+        }
+        h3{
+            border-radius:10px;
+            height:40px;
+            background-color: aliceblue;
+            border: 0;
+            color: black;
+            padding:10px;
+        }
+        .task{
+            margin-top:50px;
+        }
+
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="wrapper">
+            <input type="text" id="inp">
+            <button id="btn" onclick="Additem()">Add</button>
+            <div class="tasks">
+                <p id="display"></p>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>
+<script>
+    let input = document.getElementById('inp');
+    let text =  document.getElementById('text');
+    let display= document.getElementById('display');
+    let btn = document.getElementById('btn');
+    let arr = [];
+
+    function Additem(){
+        arr.push(input.value);
+        console.log(arr);
+        display.innerHTML +=
+        ` <h3>${arr.slice(-1)}
+        <button onclick="delete()">Delete</button>
+        </h3>`
+        // display.innerHTML += "<h3>"+arr.slice(-1) + "<button>" + "Delete"+"</button>" + "</h3>"
+
+    }
+//     let spliceArr = ["Me","You","Him","Her","He","she"]
+//     console.log(spliceArr);
+//     spliceArr.splice(2,2)
+//     console.log(spliceArr);
+
+// </script>
